@@ -6,20 +6,22 @@ const provider = new Provider();
 
 waves.setProvider(provider);
 
+
 document.querySelector(".js-login").addEventListener("click", async function(event) {
     try {
         const userData = await waves.login();
         event.target.classList.add("clicked");
         event.target.innerHTML = `
             authorized as <br>
-            <a href='https://wavesexplorer.com/testnet/address/${userData.address}' target="_blank">
-                ${userData.address}
-            </a>`;
+            ${userData.address}`;
     } catch (e) {
         console.error('login rejected')
     }
 });
 
+
+// calling a "faucet" script wavesexplorer.com/tesnet/address/3MuN7D8r19zdvSpAd1L91Gs88bcgwUFy2mn/script
+// this will top up the account balance, but only once
 document.querySelector(".js-invoke").addEventListener("click", function() {
     waves.invoke({
         dApp: "3MuN7D8r19zdvSpAd1L91Gs88bcgwUFy2mn",
@@ -28,4 +30,25 @@ document.querySelector(".js-invoke").addEventListener("click", function() {
         }
     }).broadcast().then(console.log)
 });
+
+
+// just putting some data into account storage
+document.querySelector(".js-data").addEventListener("click", function() {
+    waves.data({
+        data: [
+            {key: "lastCall", value: new Date(), type: 'string'}
+        ]
+    }).broadcast().then(console.log)
+});
+
+
+// just transferring some WAVES token to Alice
+document.querySelector(".js-transfer").addEventListener("click", function() {
+    waves.transfer({
+        recipient: "alice",
+        amount: 1,
+        attachment: "Happy New Year!"
+    }).broadcast().then(console.log)
+});
+
 
