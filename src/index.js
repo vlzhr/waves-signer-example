@@ -13,7 +13,8 @@ document.querySelector(".js-login").addEventListener("click", async function (ev
         event.target.classList.add("clicked");
         event.target.innerHTML = `
             authorized as <br>
-            <a href="https://wavesexplorer.com/testnet/address/${userData.address}" target="_blank">${userData.address}</a>`;
+            ${userData.address}`;
+        document.querySelector(".explorer-link").innerHTML = `<a href="https://wavesexplorer.com/testnet/address/${userData.address}" target="_blank">Check the Explorer</a>`;
     } catch (e) {
         console.error('login rejected')
     }
