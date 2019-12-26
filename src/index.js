@@ -45,7 +45,7 @@ document.querySelector(".js-data").addEventListener("click", function() {
 // just transferring some WAVES token to Alice
 document.querySelector(".js-transfer").addEventListener("click", function() {
     waves.transfer({
-        recipient: "alice",
+        recipient: "3MuN7D8r19zdvSpAd1L91Gs88bcgwUFy2mn",
         amount: 1,
         attachment: "Happy New Year!"
     }).broadcast().then(console.log)
