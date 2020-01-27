@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "start": "http-server ./ -p 8081"
+    "start": "http-server ./src/ -p 8081"
   },
   "author": "",
   "license": "ISC",
