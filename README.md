@@ -8,5 +8,9 @@ npm i
 npm run build
 ```
 
+To run a server use
+```shell
+npm run start
+```
 
 Feel free to use fragments of this code in your applications!
