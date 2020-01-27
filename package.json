@@ -11,5 +11,9 @@
   "dependencies": {
     "@waves.exchange/provider-web": "0.0.2",
     "@waves/signer": "0.0.3"
+  },
+  "devDependencies": {
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
   }
 }
